@@ -21,6 +21,7 @@
 		D15D5ED92650B040005D562C /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5ED82650B040005D562C /* Loader.swift */; };
 		D15D5EDF2650B0E2005D562C /* RootContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5EDE2650B0E2005D562C /* RootContainer.swift */; };
 		D15D5EE42650B197005D562C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5EE32650B197005D562C /* Album.swift */; };
+		D15D5EFE2650F3AD005D562C /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5EFD2650F3AD005D562C /* Genre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D15D5ED82650B040005D562C /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		D15D5EDE2650B0E2005D562C /* RootContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainer.swift; sourceTree = "<group>"; };
 		D15D5EE32650B197005D562C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		D15D5EFD2650F3AD005D562C /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				D15D5EDE2650B0E2005D562C /* RootContainer.swift */,
 				D15D5EE32650B197005D562C /* Album.swift */,
+				D15D5EFD2650F3AD005D562C /* Genre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				D15D5EDF2650B0E2005D562C /* RootContainer.swift in Sources */,
 				D15D5ED92650B040005D562C /* Loader.swift in Sources */,
 				D15D5ECB2650A80D005D562C /* ServiceManager.swift in Sources */,
+				D15D5EFE2650F3AD005D562C /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
