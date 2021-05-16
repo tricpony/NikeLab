@@ -13,6 +13,10 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
+            List(results) { album in
+                Text(album.name)
+            }
+
             ProgressView("Loading...").opacity(loading ? 1 : 0).onAppear(perform: {
                 Loader<RootContainer>().load { result in
                     DispatchQueue.main.async {
@@ -27,10 +31,6 @@ struct ContentView: View {
                     }
                 }
             })
-            
-            List(results) { album in
-                Text(album.name)
-            }
         }
     }
 }
