@@ -14,8 +14,19 @@ struct AlbumDetailContent: View {
     var body: some View {
         VStack {
             LazyImage(imageUrlString: album.artworkUrl)
-
+                .frame(height: height)
+            
+            VStack (alignment: .leading) {
+                Text(album.name)
+                    .foregroundColor(.primary)
+                Text(album.artistName)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
         }
+        
+        Divider()
+        Spacer()
     }
 }
 
