@@ -16,6 +16,7 @@ struct Album: Model, Codable, Hashable, Identifiable {
     var copyright: String
     var releaseDate: String
     var artworkUrl: String
+    var artistUrl: String
         
     enum CodingKeys: String, CodingKey {
         case id
@@ -25,6 +26,7 @@ struct Album: Model, Codable, Hashable, Identifiable {
         case copyright
         case releaseDate
         case artworkUrl = "artworkUrl100"
+        case artistUrl
     }
 
     init(from decoder: Decoder) throws {
@@ -36,6 +38,7 @@ struct Album: Model, Codable, Hashable, Identifiable {
         self.copyright = try container.decode(String.self, forKey: .copyright)
         self.releaseDate = try container.decode(String.self, forKey: .releaseDate)
         self.artworkUrl = try container.decode(String.self, forKey: .artworkUrl)
+        self.artistUrl = try container.decode(String.self, forKey: .artworkUrl)
     }
 }
 

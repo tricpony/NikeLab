@@ -28,6 +28,8 @@
 		D15D5F1B2651779D005D562C /* PreviewAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5F1A2651779D005D562C /* PreviewAlbum.swift */; };
 		D15D5F242651E5B4005D562C /* LazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5F232651E5B4005D562C /* LazyImage.swift */; };
 		D15D5F3226524F23005D562C /* AlbumDetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5F3126524F23005D562C /* AlbumDetailContent.swift */; };
+		D15D5F4226532461005D562C /* WebUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5F4126532461005D562C /* WebUI.swift */; };
+		D15D5F4726532E08005D562C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D5F4626532E08005D562C /* BackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		D15D5F1A2651779D005D562C /* PreviewAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAlbum.swift; sourceTree = "<group>"; };
 		D15D5F232651E5B4005D562C /* LazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImage.swift; sourceTree = "<group>"; };
 		D15D5F3126524F23005D562C /* AlbumDetailContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailContent.swift; sourceTree = "<group>"; };
+		D15D5F4126532461005D562C /* WebUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUI.swift; sourceTree = "<group>"; };
+		D15D5F4626532E08005D562C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				D15D5F232651E5B4005D562C /* LazyImage.swift */,
+				D15D5F4126532461005D562C /* WebUI.swift */,
+				D15D5F4626532E08005D562C /* BackButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,7 +389,9 @@
 				D15D5ED92650B040005D562C /* Loader.swift in Sources */,
 				D15D5F052650F989005D562C /* AlbumRow.swift in Sources */,
 				D15D5F0D26517427005D562C /* AlbumMasterContent.swift in Sources */,
+				D15D5F4726532E08005D562C /* BackButton.swift in Sources */,
 				D15D5ECB2650A80D005D562C /* ServiceManager.swift in Sources */,
+				D15D5F4226532461005D562C /* WebUI.swift in Sources */,
 				D15D5EFE2650F3AD005D562C /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

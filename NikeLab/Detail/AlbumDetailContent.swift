@@ -21,7 +21,7 @@ struct AlbumDetailContent: View {
                 .frame(height: height)
             
             HStack {
-                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: { }) {
                     Text("iTunes")
                         .padding(.vertical)
                 }
@@ -47,11 +47,7 @@ struct AlbumDetailContent: View {
 
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(
-          leading: Button(action: { presentation.wrappedValue.dismiss() }) {
-            Image(systemName: "chevron.left")
-              .foregroundColor(.white)
-              .imageScale(.large) })
+        .navigationBarItems(leading: BackButton(color: .white))
         
         Spacer()
     }
