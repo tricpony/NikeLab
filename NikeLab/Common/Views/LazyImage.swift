@@ -20,7 +20,7 @@ struct LazyImage: View {
             ProgressView().opacity(loading ? 1 : 0)
         }.onAppear(perform: {
             let url = URL(string: imageUrlString)
-            load(url) { result in
+            Loader<Data>().loadData(url) { result in
                 DispatchQueue.main.async {
                     loading = false
                     switch result {
@@ -40,21 +40,6 @@ struct LazyImage: View {
                 }
             }
         })
-    }
-      
-    /// Request service at urlString.
-    /// - Parameters:
-    ///   - url: Web address of art.
-    ///   - completion: Call back to indicate success or failure associated with payload.
-    func load(_ url: URL?, completion:@escaping (Swift.Result<Data?, ServiceError>)->()) {
-        _ = ServiceManager.sharedService.startServiceAt(url: url) { result in
-            switch result {
-            case .success(let payload):
-                completion(.success(payload))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
     }
 }
 

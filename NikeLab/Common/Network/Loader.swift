@@ -19,5 +19,16 @@ struct Loader<T: Decodable> {
             }
         }
     }
+    
+    func loadData(_ url: URL?, completion:@escaping (Swift.Result<T?, ServiceError>)->()) {
+        _ = ServiceManager.sharedService.startServiceAt(url: url) { result in
+            switch result {
+            case .success(let payload):
+                completion(.success(payload as? T))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
 
