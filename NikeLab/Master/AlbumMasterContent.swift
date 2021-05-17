@@ -23,7 +23,7 @@ struct AlbumMasterContent: View {
 
             ProgressView("Loading...").opacity(loading ? 1 : 0)
         }.onAppear(perform: {
-            Loader<RootContainer>().load(API.feedURL) { result in
+            Loader<RootContainer>().load(API.feedURL()) { result in
                 DispatchQueue.main.async {
                     loading = false
                     switch result {

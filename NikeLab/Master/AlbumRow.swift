@@ -13,6 +13,7 @@ struct AlbumRow: View {
     var body: some View {
         HStack {
             LazyImage(imageUrlString: album.artworkUrl)
+                .clipShape(RoundedRectangle(cornerRadius: 4.25))
                 .frame(width: 50, height: 50)
 
             VStack (alignment: .leading) {

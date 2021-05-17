@@ -15,9 +15,7 @@ struct LazyImage: View {
 
     var body: some View {
         ZStack {
-            image?
-                .resizable()
-                .clipShape(RoundedRectangle(cornerRadius: 4.25))
+            image?.resizable()
 
             ProgressView().opacity(loading ? 1 : 0)
         }.onAppear(perform: {
