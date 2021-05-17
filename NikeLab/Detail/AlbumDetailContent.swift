@@ -9,9 +9,13 @@ import SwiftUI
 
 struct AlbumDetailContent: View {
     var album: Model
-
+    @State private var height = UIScreen.main.bounds.size.height / 2
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            LazyImage(imageUrlString: album.artworkUrl)
+
+        }
     }
 }
 

@@ -18,7 +18,6 @@ struct LazyImage: View {
             image?
                 .resizable()
                 .clipShape(RoundedRectangle(cornerRadius: 4.25))
-                .frame(width: 50, height: 50)
 
             ProgressView().opacity(loading ? 1 : 0)
         }.onAppear(perform: {
