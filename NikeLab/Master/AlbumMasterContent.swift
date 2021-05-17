@@ -10,6 +10,7 @@ import SwiftUI
 struct AlbumMasterContent: View {
     @State private var loading = true
     @State private var albums = [Album]()
+    @State private var navTitle = ""
 
     var body: some View {
         ZStack {
@@ -18,7 +19,7 @@ struct AlbumMasterContent: View {
                     NavigationLink (destination: AlbumDetailContent(album: album)) {
                         AlbumRow(album: album)
                     }
-                }.navigationTitle("Top 100 Albums")
+                }.navigationTitle(navTitle)
             }
 
             ProgressView("Loading...").opacity(loading ? 1 : 0)
@@ -30,6 +31,7 @@ struct AlbumMasterContent: View {
                     case .success(let rootContainer):
                         guard let results = rootContainer?.results else { return }
                         self.albums = results
+                        self.navTitle = "Top \(results.count) Albums"
                     case .failure(let error):
                         fatalError(error.errorDescription ?? "Error ocurred")
                     }

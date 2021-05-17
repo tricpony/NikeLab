@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AlbumDetailContent: View {
+    let leadPadding: CGFloat = 20
     var album: Model
     @State private var height = UIScreen.main.bounds.size.height / 2
     @Environment(\.presentationMode) var presentation
@@ -26,17 +27,24 @@ struct AlbumDetailContent: View {
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray, lineWidth: 0.5))
-                .padding([.top, .leading, .trailing], 20.0)
+                .padding([.top, .leading, .trailing], leadPadding)
+                .padding(.bottom, 5)
             }
 
-            VStack (alignment: .leading) {
-                Text(album.name)
-                    .foregroundColor(.primary)
-                Text(album.artistName)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+            Divider()
+
+            GeometryReader { geometry in
+                VStack (alignment: .leading) {
+                    Text(album.name)
+                        .foregroundColor(.primary)
+                    Text(album.artistName)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                .frame(width: geometry.size.width, height: .none, alignment: .topLeading)
+                .padding(.leading, leadPadding)
             }
-            .padding()
+
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
@@ -45,7 +53,6 @@ struct AlbumDetailContent: View {
               .foregroundColor(.white)
               .imageScale(.large) })
         
-        Divider()
         Spacer()
     }
 }
