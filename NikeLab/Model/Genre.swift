@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Genre: Codable, Hashable, Identifiable {
+struct Genre: Model, Codable, Hashable, Identifiable {
     var id: String
     var name: String
     

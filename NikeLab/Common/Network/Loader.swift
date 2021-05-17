@@ -8,8 +8,8 @@
 import Foundation
 
 struct Loader<T: Decodable> {
-    func load(completion:@escaping (Swift.Result<T?, ServiceError>)->()) {
-        _ = ServiceManager.sharedService.startServiceAt(url: API.feedURL) { result in
+    func load(_ url: URL?, completion:@escaping (Swift.Result<T?, ServiceError>)->()) {
+        _ = ServiceManager.sharedService.startServiceAt(url: url) { result in
             switch result {
             case .success(let payload):
                 let fetchedObjects = JsonUtility<T>.parseJSON(payload)
