@@ -10,9 +10,13 @@ import SwiftUI
 struct AlbumDetailContent: View {
     let leadPadding: CGFloat = 20
     var album: Model
-    @State private var height = UIScreen.main.bounds.size.height / 2
+    lazy var artistURL: URL? = {
+        URL(string: album.artistUrl)
+    }()
+    @State private var height: CGFloat = UIScreen.main.bounds.size.height / 2.0
+    @State private var showingSheet: Bool = false
     @Environment(\.presentationMode) var presentation
-
+    
     var body: some View {
         VStack {
             LazyImage(imageUrlString: album.artworkUrl)
@@ -21,9 +25,12 @@ struct AlbumDetailContent: View {
                 .frame(height: height)
             
             HStack {
-                Button(action: { }) {
+                Button(action: { showingSheet.toggle() }) {
                     Text("iTunes")
                         .padding(.vertical)
+                }
+                .sheet(isPresented: $showingSheet){
+                    WebContent(url: URL(string: album.artistUrl))
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray, lineWidth: 0.5))

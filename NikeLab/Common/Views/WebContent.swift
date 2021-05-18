@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct WebContent: View {
+    var url: URL?
+    @State private var loading = true
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            HStack {
+                WebUI(url: url!, action: { status in
+                    loading.toggle()
+                })
+            }.ignoresSafeArea(edges: .top)
+
+            ProgressView("Loading...").opacity(loading ? 1 : 0)
+        }
     }
 }
 
 struct WebContent_Previews: PreviewProvider {
     static var previews: some View {
-        WebContent()
+        WebContent(url: URL(string: "https://www.yahoo.com"))
     }
 }

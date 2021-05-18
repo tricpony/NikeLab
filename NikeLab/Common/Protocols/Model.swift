@@ -16,6 +16,7 @@ protocol Model {
     var copyright: String { get }
     var releaseDate: String { get }
     var artworkUrl: String { get }
+    var artistUrl: String { get }
 }
 
 extension Model {
@@ -36,6 +37,10 @@ extension Model {
     }
     
     var artworkUrl: String {
+        ""
+    }
+    
+    var artistUrl: String {
         ""
     }
 }

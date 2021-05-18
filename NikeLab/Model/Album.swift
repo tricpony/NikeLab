@@ -38,7 +38,7 @@ struct Album: Model, Codable, Hashable, Identifiable {
         self.copyright = try container.decode(String.self, forKey: .copyright)
         self.releaseDate = try container.decode(String.self, forKey: .releaseDate)
         self.artworkUrl = try container.decode(String.self, forKey: .artworkUrl)
-        self.artistUrl = try container.decode(String.self, forKey: .artworkUrl)
+        self.artistUrl = try container.decode(String.self, forKey: .artistUrl)
     }
 }
 

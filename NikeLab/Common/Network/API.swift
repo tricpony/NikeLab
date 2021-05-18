@@ -19,7 +19,7 @@ struct API {
     ///   - genre: Media genre.
     ///   - resultCount: How many to fetch.
     /// - Returns: URL that looks like https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json
-    static func feedURL(media: String = "apple-music", feed: String = "top-albums", genre: String = "all", resultCount: String = "5") -> URL? {
+    static func feedURL(media: String = "apple-music", feed: String = "top-albums", genre: String = "all", resultCount: String = "100") -> URL? {
         URL(string: "\(base)/\(media)/\(feed)/\(genre)/\(resultCount)/explicit.json")
     }
 }
