@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// Protocol to decouple model objects from preview and unit testing.
 protocol Model {
     var id: String { get }
     var artistName: String { get }

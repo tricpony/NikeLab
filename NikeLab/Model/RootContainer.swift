@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Root model object container.
 struct RootContainer: Codable {
     var results: [Album]
     

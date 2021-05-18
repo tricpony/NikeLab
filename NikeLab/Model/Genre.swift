@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Genre model.
 struct Genre: Model, Codable, Hashable, Identifiable {
     var id: String
     var name: String

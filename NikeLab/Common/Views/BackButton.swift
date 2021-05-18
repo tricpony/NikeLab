@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Navigation back button with chevron only.
 struct BackButton: View {
     var color: Color
     @Environment(\.presentationMode) var presentation

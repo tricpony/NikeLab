@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Mock preview album.
 struct PreviewAlbum: Model {
     var id: String
     var artistName: String

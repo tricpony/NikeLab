@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// Album model.
 struct Album: Model, Codable, Hashable, Identifiable {
     var id: String
     var artistName: String

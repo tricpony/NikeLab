@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Album detail content.
 struct AlbumDetailContent: View {
     let edgePadding: CGFloat = 20
     var album: Model

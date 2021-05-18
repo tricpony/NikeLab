@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Defines the content for each row the master list.
 struct AlbumRow: View {
     var album: Model
 

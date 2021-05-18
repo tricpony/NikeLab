@@ -10,6 +10,8 @@ import SwiftUI
 import WebKit
 
 typealias WebLoadCompletion = (Bool) -> ()
+
+/// Representable wrapper for WKWebView.
 struct WebUI: UIViewRepresentable {
     var url: URL
     var action: WebLoadCompletion
