@@ -36,7 +36,6 @@ struct WebUI: UIViewRepresentable {
     }    
 }
 
-@objc
 class WebLoadingObserver: NSObject, WKNavigationDelegate {
     var action: WebLoadCompletion!
 
@@ -46,12 +45,10 @@ class WebLoadingObserver: NSObject, WKNavigationDelegate {
     
     // MARK: WKNavigationDelegate
     
-    @objc
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         action(true)
     }
 
-    @objc
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         action(false)
     }

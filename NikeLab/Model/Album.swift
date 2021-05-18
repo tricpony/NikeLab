@@ -40,6 +40,10 @@ struct Album: Model, Codable, Hashable, Identifiable {
         self.artworkUrl = try container.decode(String.self, forKey: .artworkUrl)
         self.artistUrl = try container.decode(String.self, forKey: .artistUrl)
     }
+    
+    var displayGenre: String? {
+        genres?.first?.name
+    }
 }
 
 extension Album {

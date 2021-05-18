@@ -23,21 +23,24 @@ struct AlbumMasterContent: View {
             }
 
             ProgressView("Loading...").opacity(loading ? 1 : 0)
-        }.onAppear(perform: {
-            Loader<RootContainer>().load(API.feedURL()) { result in
-                DispatchQueue.main.async {
-                    loading = false
-                    switch result {
-                    case .success(let rootContainer):
-                        guard let results = rootContainer?.results else { return }
-                        self.albums = results
-                        self.navTitle = "Top \(results.count) Albums"
-                    case .failure(let error):
-                        fatalError(error.errorDescription ?? "Error ocurred")
-                    }
+        }.onAppear(perform: performAlbumFetch)
+    }
+    
+    /// Fetch matching  albums from iTunes RSSFeed.
+    private func performAlbumFetch() {
+        Loader<RootContainer>().load(API.feedURL()) { result in
+            DispatchQueue.main.async {
+                loading = false
+                switch result {
+                case .success(let rootContainer):
+                    guard let results = rootContainer?.results else { return }
+                    self.albums = results
+                    self.navTitle = "Top \(results.count) Albums"
+                case .failure(let error):
+                    fatalError(error.errorDescription ?? "Error ocurred")
                 }
             }
-        })
+        }
     }
 }
 

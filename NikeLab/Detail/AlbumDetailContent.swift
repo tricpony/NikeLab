@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AlbumDetailContent: View {
-    let leadPadding: CGFloat = 20
+    let edgePadding: CGFloat = 20
     var album: Model
     lazy var artistURL: URL? = {
         URL(string: album.artistUrl)
@@ -26,7 +26,7 @@ struct AlbumDetailContent: View {
             
             HStack {
                 Button(action: { showingSheet.toggle() }) {
-                    Text("iTunes")
+                    Text("Open Me in iTunes")
                         .padding(.vertical)
                 }
                 .sheet(isPresented: $showingSheet){
@@ -34,7 +34,7 @@ struct AlbumDetailContent: View {
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray, lineWidth: 0.5))
-                .padding([.top, .leading, .trailing], leadPadding)
+                .padding([.top, .leading, .trailing], edgePadding)
                 .padding(.bottom, 5)
             }
 
@@ -47,14 +47,24 @@ struct AlbumDetailContent: View {
                     Text(album.artistName)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
+                    Text(album.displayGenre ?? "")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    HStack (alignment: .top) {
+                        Text(album.releaseDate)
+                        Spacer()
+                        Text(album.copyright)
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
                 }
-                .frame(width: geometry.size.width, height: .none, alignment: .topLeading)
-                .padding(.leading, leadPadding)
+                .frame(width: geometry.size.width - (edgePadding * 2), height: .none, alignment: .topLeading)
+                .padding(.leading, edgePadding)
             }
 
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: BackButton(color: .white))
+        .navigationBarItems(leading: BackButton(color: .yellow))
         
         Spacer()
     }
