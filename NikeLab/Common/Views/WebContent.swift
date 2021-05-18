@@ -17,7 +17,7 @@ struct WebContent: View {
                 WebUI(url: url!, action: { status in
                     loading.toggle()
                 })
-            }.ignoresSafeArea(edges: .top)
+            }
 
             ProgressView("Loading...").opacity(loading ? 1 : 0)
         }
