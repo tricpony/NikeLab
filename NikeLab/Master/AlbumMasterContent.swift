@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Album detail content.
 struct AlbumMasterContent: View {
     @State private var loading = true
     @State private var albums = [Album]()
