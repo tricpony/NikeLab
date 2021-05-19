@@ -11,9 +11,6 @@ import SwiftUI
 struct AlbumDetailContent: View {
     let edgePadding: CGFloat = 20
     var album: Model
-    lazy var artistURL: URL? = {
-        URL(string: album.artistUrl)
-    }()
     @State private var height: CGFloat = UIScreen.main.bounds.size.height / 2.0
     @State private var showingSheet: Bool = false
     @Environment(\.presentationMode) var presentation
