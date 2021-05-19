@@ -30,16 +30,16 @@ struct LazyImage: View {
                 switch result {
                 case .success(let data):
                     guard let data = data else {
-                        image = Image("NoArt")
+                        image = Image("Fallback")
                         return
                     }
                     guard let uiImage = UIImage(data: data) else {
-                        image = Image("NoArt")
+                        image = Image("Fallback")
                         return
                     }
                     image = Image(uiImage: uiImage)
                 case .failure( _ ):
-                    image = Image("NoArt")
+                    image = Image("Fallback")
                 }
             }
         }
