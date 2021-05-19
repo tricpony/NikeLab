@@ -42,21 +42,8 @@ struct Album: Model, Codable, Hashable, Identifiable {
         self.artistUrl = try container.decode(String.self, forKey: .artistUrl)
     }
     
+    /// Name of first genre in the genres array.
     var displayGenre: String? {
         genres?.first?.name
-    }
-}
-
-extension Album {
-    static var mockAlbum: Album? {
-        let albumJSON = "{\"id\"id,\"artistName\":\"artist name\",\"name\":\"name\",\"copyright\":\"copyright\", \"releaseDate\":\"releaseDate\", \"artworkUrl\":\"artworkUrl\"}"
-        guard let data = albumJSON.data(using: .utf8) else { return .none }
-        do {
-            let album = try JSONDecoder().decode(Album.self, from: data)
-            return album
-        } catch let error as NSError {
-            print(error)
-        }
-        return .none
     }
 }
