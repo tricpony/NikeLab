@@ -25,6 +25,8 @@ struct AlbumDetailContent: View {
             
             HStack {
                 Button(action: {
+                    // normally a good candidate for lazy but won't compile
+                    // Cannot use mutating getter on immutable value: 'self' is immutable
                     guard URL(string: album.artistUrl) != .none else {
                         buttonTitle = "Content Not Available"
                         return
