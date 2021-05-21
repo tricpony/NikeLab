@@ -25,11 +25,11 @@ struct AlbumDetailContent: View {
             
             HStack {
                 Button(action: {
-                    if URL(string: album.artistUrl) == .none {
+                    guard URL(string: album.artistUrl) != .none else {
                         buttonTitle = "Content Not Available"
-                    } else {
-                        showingSheet.toggle()
+                        return
                     }
+                    showingSheet.toggle()
                     }) {
                     Text(buttonTitle)
                         .padding(.vertical)
