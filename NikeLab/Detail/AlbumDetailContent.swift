@@ -11,6 +11,7 @@ import SwiftUI
 struct AlbumDetailContent: View {
     let edgePadding: CGFloat = 20
     var album: Model
+    @State var buttonTitle = "Open Me in iTunes"
     @State private var height: CGFloat = UIScreen.main.bounds.size.height / 2.0
     @State private var showingSheet: Bool = false
     @Environment(\.presentationMode) var presentation
@@ -23,8 +24,14 @@ struct AlbumDetailContent: View {
                 .frame(height: height)
             
             HStack {
-                Button(action: { showingSheet.toggle() }) {
-                    Text("Open Me in iTunes")
+                Button(action: {
+                    if URL(string: album.artistUrl) == .none {
+                        buttonTitle = "Content Not Available"
+                    } else {
+                        showingSheet.toggle()
+                    }
+                    }) {
+                    Text(buttonTitle)
                         .padding(.vertical)
                 }
                 .sheet(isPresented: $showingSheet){
