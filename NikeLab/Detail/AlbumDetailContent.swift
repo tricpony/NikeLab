@@ -35,7 +35,8 @@ struct AlbumDetailContent: View {
                         .padding(.vertical)
                 }
                 .sheet(isPresented: $showingSheet){
-                    WebContent(url: URL(string: album.artistUrl))
+                    // forced unwrapping is safe here since showingSheet is true only when the URL is valid
+                    WebContent(url: URL(string: album.artistUrl)!)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray, lineWidth: 0.5))

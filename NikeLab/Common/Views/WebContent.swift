@@ -9,13 +9,13 @@ import SwiftUI
 
 /// Web view that displays indeterminate progress view during the load.
 struct WebContent: View {
-    var url: URL?
+    var url: URL
     @State private var loading = true
 
     var body: some View {
         ZStack {
             HStack {
-                WebUI(url: url!, action: { _ in
+                WebUI(url: url, action: { _ in
                     loading.toggle()
                 })
             }
@@ -27,6 +27,6 @@ struct WebContent: View {
 
 struct WebContent_Previews: PreviewProvider {
     static var previews: some View {
-        WebContent(url: URL(string: "https://www.yahoo.com"))
+        WebContent(url: URL(string: "https://www.yahoo.com")!)
     }
 }
