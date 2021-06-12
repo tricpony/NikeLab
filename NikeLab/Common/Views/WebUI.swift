@@ -15,7 +15,7 @@ typealias WebLoadCompletion = (Bool) -> ()
 struct WebUI: UIViewRepresentable {
     var url: URL
     var action: WebLoadCompletion
-    var observer: WebLoadingObserver!
+    var observer: WebLoadingObserver
     
     init(url: URL, action: @escaping WebLoadCompletion) {
         self.url = url
