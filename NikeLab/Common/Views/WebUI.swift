@@ -39,7 +39,7 @@ struct WebUI: UIViewRepresentable {
 }
 
 class WebLoadingObserver: NSObject, WKNavigationDelegate {
-    var action: WebLoadCompletion!
+    var action: WebLoadCompletion
 
     init(action: @escaping WebLoadCompletion) {
         self.action = action
